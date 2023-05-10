@@ -11,7 +11,7 @@ const Header = () => {
   const { data: session, status } = useSession();
 
   return (
-    <div className="flex fixed w-full h-24 items-center border-b-2 justify-between px-16">
+    <div className="flex fixed w-full h-24 items-center  border-b-2 justify-between px-16">
       <div
         id="container-logo"
         className="relative "

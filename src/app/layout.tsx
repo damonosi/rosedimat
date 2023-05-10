@@ -1,5 +1,6 @@
 import { Providers } from "@/utils/providers";
 import { Inter } from "next/font/google";
+
 import Footer from "./Footer";
 import Header from "./Header";
 import "./globals.css";
@@ -10,6 +11,9 @@ export const metadata = {
   title: "Rose Dimat",
   description: "Magazin trandafiri de damasc",
 };
+
+
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

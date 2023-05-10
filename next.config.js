@@ -6,6 +6,7 @@ const nextConfig = {
     mongoUri:
       "mongodb+srv://admin:UCUOVqKCS95Q7qVe@cluster0.jnb6d.mongodb.net/rose_dimat",
   },
+
   experimental: {
     serverComponentsExternalPackages: ["mongoose", "bcryptjs"],
   },
