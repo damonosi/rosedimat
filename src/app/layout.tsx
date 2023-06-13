@@ -1,15 +1,11 @@
 import { Providers } from "@/utils/providers";
-import { Inter, Poppins } from "next/font/google";
+import { Hahmlet } from "next/font/google";
 
 import Footer from "./Footer";
 import Header from "./Header";
 import "./globals.css";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: "500",
-});
-const inter = Inter({ subsets: ["latin"] });
+const hahmlet = Hahmlet({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Rose Dimat",
@@ -23,9 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={hahmlet.className}>
         <Providers>
-          <main className="flex relative flex-col ">
+          <main className="flex relative flex-col bg-site">
             <Header />
             {children}
 
