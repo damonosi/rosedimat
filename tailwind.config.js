@@ -17,8 +17,17 @@ module.exports = {
         site: "#FBFAEC",
         crem: "#F2EECB",
         roz: "#D3736D",
+        verde: "#709170",
+      },
+      transitionProperty: {
+        width: "width",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("children", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+  ],
 };
