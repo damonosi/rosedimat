@@ -71,7 +71,11 @@ const Header = () => {
           id="container-logo"
           className="relative "
         >
-          <Logo className="w-12 h-12" />
+          <Logo
+            className={`w-12 h-12 transform-gpu transition duration-500 ${
+              scrollDirection === "down" && "rotate-[360deg]"
+            } `}
+          />
         </Link>
         <Navigation scrollDirection={scrollDirection} />
 
