@@ -11,28 +11,53 @@ const PatratRoz = ({ scrollDirection }: { scrollDirection: string }) => {
   return (
     <AnimatePresence>
       <motion.svg
-        layout="size"
         viewBox="0 0 405 60"
-        transition={{
-          layout: { type: "spring", stiffness: 100, duration: 1 },
-        }}
         fill="none"
-        className={`absolute h-[60px] top-0 right-0  bottom-0  ${
-          scrollDirection === "down" && " w-screen"
-        } `}
+        animate={{ width: scrollDirection === "down" ? "100%" : "30%" }}
+        transition={{ ease: "easeOut", duration: 2 }}
+        className={`absolute h-[60px] top-0 right-0  bottom-0   `}
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          layout="size"
           opacity="0.8"
           d="M1920 60H-2.90302e-06L147.162 0H1920V60Z"
-          className="w-full h-[60px]"
+          className=" h-[60px]"
           fill="#D3736D"
         />
       </motion.svg>
     </AnimatePresence>
   );
 };
+
+const Navigation = ({ scrollDirection }: { scrollDirection: string }) => (
+  <nav
+    className={`z-30 flex gap-4 justify-end w-1/2 items-center ${
+      scrollDirection === "down" && "text-site"
+    }`}
+  >
+    <Link
+      href="/"
+      id="container-logo"
+      className="relative "
+    >
+      Produse
+    </Link>
+    <Link
+      href="/"
+      id="container-logo"
+      className="relative "
+    >
+      Despre noi
+    </Link>
+    <Link
+      href="/"
+      id="container-logo"
+      className="relative "
+    >
+      Contact
+    </Link>
+  </nav>
+);
 
 const Header = () => {
   const { data: session, status } = useSession();
@@ -48,30 +73,8 @@ const Header = () => {
         >
           <Logo className="w-12 h-12" />
         </Link>
+        <Navigation scrollDirection={scrollDirection} />
 
-        <nav className="z-30 flex gap-4 justify-end w-1/2 items-center">
-          <Link
-            href="/"
-            id="container-logo"
-            className="relative "
-          >
-            Produse
-          </Link>
-          <Link
-            href="/"
-            id="container-logo"
-            className="relative "
-          >
-            Despre noi
-          </Link>
-          <Link
-            href="/"
-            id="container-logo"
-            className="relative "
-          >
-            Contact
-          </Link>
-        </nav>
         <div
           className=" flex  h-full  justify-center "
           id="cart"
