@@ -64,8 +64,8 @@ const Header = () => {
   let scrollDirection = useScrollDirection();
   console.log(scrollDirection);
   return (
-    <header className="flex fixed bg-site w-full h-[60px] z-50   border-b-2 overflow-hidden ">
-      <div className="flex  w-full px-36 items-center h-[60px] justify-between ">
+    <header className="flex fixed bg-site w-full h-[60px] z-50    overflow-hidden ">
+      <div className="flex  w-full px-2 md:px-36 items-center h-[60px] justify-between ">
         <Link
           href="/"
           id="container-logo"

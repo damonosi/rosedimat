@@ -7,7 +7,7 @@ import Image from "next/image";
 import Produs from "./Produs";
 const ProduseSection = () => {
   return (
-    <div className=" text-center w-full pt-24 px-96 relative gap-">
+    <div className=" text-center w-full pt-24 px-2 md:px-96 relative gap-">
       <h1 className="text-3xl text-roz ">
         Produse din petale de trandafir culese manual
       </h1>
