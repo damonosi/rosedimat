@@ -14,7 +14,7 @@ const ProduseSection = () => {
 
       <HrProduse
         alt="pauza-sectiune"
-        className="py-12"
+        className=" w-full  h-2 my-12"
       />
       <BannerStanga
         alt="banner-stanga"
@@ -35,7 +35,7 @@ const ProduseSection = () => {
         />
         <HrProduse
           alt="pauza-sectiune"
-          className="py-12"
+          className="w-full  h-2 my-12"
         />
         <Produs
           src={UleiTrandafiri}
@@ -47,7 +47,7 @@ const ProduseSection = () => {
         />
         <HrProduse
           alt="pauza-sectiune"
-          className="py-12"
+          className="w-full  h-2 my-12"
         />{" "}
         <Produs
           src={PetaleTrandafiri}
