@@ -1,5 +1,6 @@
+import Cart from "@/public/imagini/cart.svg";
 import Image, { StaticImageData } from "next/image";
-
+import { useState } from "react";
 interface IProdus {
   src: StaticImageData;
   titlu: string;
@@ -17,6 +18,15 @@ const Produs = ({
   cantitate,
   continutProdus,
 }: IProdus) => {
+  const [cantitateDorita, setCantitateDorita] = useState(1);
+  const handleScadereCantitateDorita = () => {
+    cantitateDorita <= 1
+      ? setCantitateDorita(1)
+      : setCantitateDorita(cantitateDorita - 1);
+  };
+  const handleAdaugaCantitateDorita = () => {
+    setCantitateDorita(cantitateDorita + 1);
+  };
   return (
     <section
       className={`flex relative  w-full gap-5  ${
@@ -57,12 +67,26 @@ const Produs = ({
             id="selecteaza cantitate"
             className="flex "
           >
-            <button>- </button>
-            <span>cantitate </span>
-            <button>+ </button>
+            <button
+              onClick={handleScadereCantitateDorita}
+              className="text-verde border w-8 h-8 opacity-50"
+            >
+              -{" "}
+            </button>
+            <span className="text-verde border flex items-center justify-center w-8 h-8 opacity-50">
+              {cantitateDorita}
+            </span>
+            <button
+              onClick={handleAdaugaCantitateDorita}
+              className="text-verde border w-8 h-8 opacity-50"
+            >
+              +{" "}
+            </button>
           </div>
         </section>
-        <button className="bg-roz text-crem">Comanda</button>
+        <button className="bg-roz text-crem flex p-4 gap-[10px]">
+          <span>Comanda</span> <Cart className="w-7 h-7 " />{" "}
+        </button>
       </div>
     </section>
   );

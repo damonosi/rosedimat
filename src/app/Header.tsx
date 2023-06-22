@@ -38,21 +38,21 @@ const Navigation = ({ scrollDirection }: { scrollDirection: string }) => (
     <Link
       href="/"
       id="container-logo"
-      className="relative "
+      className="relative hover:scale-110 "
     >
       Produse
     </Link>
     <Link
       href="/"
       id="container-logo"
-      className="relative "
+      className="relative hover:scale-110"
     >
       Despre noi
     </Link>
     <Link
       href="/"
       id="container-logo"
-      className="relative "
+      className="relative hover:scale-110"
     >
       Contact
     </Link>
@@ -69,10 +69,10 @@ const Header = () => {
         <Link
           href="/"
           id="container-logo"
-          className="relative "
+          className="relative z-30"
         >
           <Logo
-            className={`w-12 h-12 transform-gpu transition duration-500 ${
+            className={`w-12 h-12 hover:scale-110 transform-gpu transition duration-500 hover:rotate-[360deg] ${
               scrollDirection === "down" && "rotate-[360deg]"
             } `}
           />
@@ -86,7 +86,7 @@ const Header = () => {
           <button className="z-30 ">
             <Cart
               alt="cart"
-              className="w-8 h-8"
+              className="w-8 h-8 hover:scale-110"
             />
           </button>
           <PatratRoz scrollDirection={scrollDirection} />

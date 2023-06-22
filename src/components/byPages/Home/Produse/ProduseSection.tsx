@@ -1,26 +1,28 @@
 import ApaTrandafiri from "@/public/imagini/apa.png";
+import BannerDreapta from "@/public/imagini/banner-lateral-dreapta.svg";
 import BannerStanga from "@/public/imagini/banner-lateral-stanga.svg";
 import HrProduse from "@/public/imagini/hrProduse.svg";
 import PetaleTrandafiri from "@/public/imagini/petale.png";
 import UleiTrandafiri from "@/public/imagini/ulei.png";
-import Image from "next/image";
 import Produs from "./Produs";
 const ProduseSection = () => {
   return (
-    <div className=" text-center w-full pt-24 px-2 md:px-96 relative gap-">
+    <div className="flex flex-col text-center w-full pt-24 px-2 md:px-96 relative overflow-hidden ">
       <h1 className="text-3xl text-roz ">
         Produse din petale de trandafir culese manual
       </h1>
 
-      <Image
-        alt="banner-stanga"
+      <HrProduse
+        alt="pauza-sectiune"
         className="py-12"
-        src={HrProduse}
       />
-      <Image
+      <BannerStanga
         alt="banner-stanga"
-        className="absolute left-0 top-0"
-        src={BannerStanga}
+        className="absolute left-0 w-[281px] h-[772px]  top-0"
+      />
+      <BannerDreapta
+        alt="banner-dreapta"
+        className="absolute right-0 w-[281px] h-[772px]  top-1/2 "
       />
       <section id="produse">
         <Produs
@@ -31,10 +33,9 @@ const ProduseSection = () => {
           pret="25 Ron"
           cantitate="100 ml"
         />
-        <Image
-          alt="banner-stanga"
+        <HrProduse
+          alt="pauza-sectiune"
           className="py-12"
-          src={HrProduse}
         />
         <Produs
           src={UleiTrandafiri}
@@ -44,10 +45,9 @@ const ProduseSection = () => {
           pret="450 Ron"
           cantitate="2 ml"
         />
-        <Image
-          alt="banner-stanga"
+        <HrProduse
+          alt="pauza-sectiune"
           className="py-12"
-          src={HrProduse}
         />{" "}
         <Produs
           src={PetaleTrandafiri}
