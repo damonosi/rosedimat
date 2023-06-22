@@ -65,7 +65,7 @@ const DespreNoi = () => {
           <Facebook className="w-4 h-4" />
           <Twitter className="w-4 h-4" />
         </div>
-        <BannerFooter className=" bottom-0 transform translate-y-1/2 left-0 right-0" />
+        <BannerFooter className=" bottom-0 transform translate-y-1/4 left-0 right-0" />
       </section>
     </section>
   );
