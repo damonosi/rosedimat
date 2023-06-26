@@ -18,12 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${hahmlet.className} text-roz overflow-x-hidden`}>
+    <html
+      className="overflow-x-hidden "
+      lang="en"
+    >
+      <body className={`${hahmlet.className} overflow-x-hidden`}>
         <Providers>
-          <Header />
-          <main className="flex relative flex-col bg-site   ">{children}</main>
-          <Footer />
+          <main className="flex relative flex-col bg-site text-roz  ">
+            {" "}
+            <Header />
+            {children}
+            <Footer />
+          </main>
         </Providers>
       </body>
     </html>
