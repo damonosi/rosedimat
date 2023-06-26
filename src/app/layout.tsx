@@ -19,14 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={hahmlet.className}>
+      <body className={`${hahmlet.className} text-roz overflow-x-hidden`}>
         <Providers>
-          <main className="flex relative flex-col bg-site text-roz  ">
-            <Header />
-            {children}
-
-            <Footer />
-          </main>
+          <Header />
+          <main className="flex relative flex-col bg-site   ">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
