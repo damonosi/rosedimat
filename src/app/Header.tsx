@@ -98,7 +98,7 @@ const Header = () => {
   const [opened, setOpenMenu] = useState(false);
 
   let scrollDirection = useScrollDirection();
-  console.log(scrollDirection);
+
   return (
     <header className=" fixed bg-site w-screen h-[60px] z-50   ">
       <section

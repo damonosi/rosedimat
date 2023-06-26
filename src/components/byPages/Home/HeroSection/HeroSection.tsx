@@ -31,18 +31,13 @@ const HeroSection = () => {
           Arta creata din petalele naturii
         </motion.span>
       </div>
-      <motion.div
-        animate={{}}
-        className="relative w-full z-10"
-        id="container-imagine"
-      >
-        <Image
-          alt="background"
-          className="w-full "
-          src={Background}
-        />
-        <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-10" />
-      </motion.div>{" "}
+
+      <Image
+        alt="background"
+        className="w-full relative z-10"
+        src={Background}
+      />
+      <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black bg-fixed opacity-10" />
     </section>
   );
 };
