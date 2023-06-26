@@ -6,6 +6,7 @@ import Logo from "@/public/imagini/logo.svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useState } from "react";
 
 const PatratRoz = ({ scrollDirection }: { scrollDirection: string }) => {
   return (
@@ -28,10 +29,43 @@ const PatratRoz = ({ scrollDirection }: { scrollDirection: string }) => {
     </AnimatePresence>
   );
 };
+const LogoLink = ({ scrollDirection }: { scrollDirection: string }) => (
+  <Link
+    href="/"
+    id="container-logo"
+    className="relative z-30"
+  >
+    <Logo
+      className={`w-12 h-12 hover:scale-110 transform-gpu transition duration-500 hover:rotate-[360deg] ${
+        scrollDirection === "down" && "rotate-[360deg]"
+      } `}
+    />
+  </Link>
+);
+const LogoMenu = ({
+  setOpenMenu,
+  opened,
+}: {
+  setOpenMenu: (arg0: boolean) => void;
+  opened: boolean;
+}) => {
+  return (
+    <button
+      id="container-logo"
+      className="relative z-30"
+      onClick={() => setOpenMenu(!opened)}
+    >
+      <Logo
+        className={`w-12 h-12 hover:scale-110 transform-gpu transition duration-500 hover:rotate-[360deg] 
+       `}
+      />
+    </button>
+  );
+};
 
-const Navigation = ({ scrollDirection }: { scrollDirection: string }) => (
+const Navigation = ({ scrollDirection }: { scrollDirection?: string }) => (
   <nav
-    className={`z-30 flex gap-4 justify-end w-1/2 items-center ${
+    className={`z-30 flex gap-4 md:justify-end w-full md:w-1/2 items-center justify-center ${
       scrollDirection === "down" && "text-site"
     }`}
   >
@@ -61,22 +95,18 @@ const Navigation = ({ scrollDirection }: { scrollDirection: string }) => (
 
 const Header = () => {
   const { data: session, status } = useSession();
+  const [opened, setOpenMenu] = useState(false);
+
   let scrollDirection = useScrollDirection();
   console.log(scrollDirection);
   return (
-    <header className="flex fixed bg-site w-full h-[60px] z-50    overflow-hidden ">
-      <div className="flex  w-full px-2 md:px-36 items-center h-[60px] justify-between ">
-        <Link
-          href="/"
-          id="container-logo"
-          className="relative z-30"
-        >
-          <Logo
-            className={`w-12 h-12 hover:scale-110 transform-gpu transition duration-500 hover:rotate-[360deg] ${
-              scrollDirection === "down" && "rotate-[360deg]"
-            } `}
-          />
-        </Link>
+    <header className=" fixed bg-site w-screen h-[60px] z-50   ">
+      <section
+        className="hidden md:flex   w-full  md:px-36 items-center h-[60px] justify-between "
+        id="desktop"
+      >
+        <LogoLink scrollDirection={scrollDirection} />
+
         <Navigation scrollDirection={scrollDirection} />
 
         <div
@@ -91,7 +121,37 @@ const Header = () => {
           </button>
           <PatratRoz scrollDirection={scrollDirection} />
         </div>
-      </div>
+      </section>
+      <section
+        id="mobile"
+        className="md:hidden relative flex w-full justify-between h-[60px] items-center px-2"
+      >
+        <h1>ROSE DIMAT</h1>
+        <LogoMenu
+          opened={opened}
+          setOpenMenu={setOpenMenu}
+        />{" "}
+        <AnimatePresence>
+          {opened && (
+            <motion.div
+              key="meniuMobile"
+              initial={{ y: "-50%", opacity: 0 }}
+              animate={{ y: "0", opacity: 1 }}
+              exit={{ y: "-10%", opacity: 0 }}
+              className="absolute z-10 right-0 left-0 flex-col px-2 flex justify-center items-center h-16 top-full bg-site"
+            >
+              <motion.hr
+                initial={{ x: "-100%" }}
+                animate={{ x: "0" }}
+                transition={{ delay: 0.5 }}
+                exit={{ x: "-50%", opacity: 0 }}
+                className="w-full h-1 bg-roz rounded-r-xl rounded-l-xl "
+              />
+              <Navigation />
+            </motion.div>
+          )}{" "}
+        </AnimatePresence>
+      </section>
     </header>
   );
 };

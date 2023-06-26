@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={hahmlet.className}>
         <Providers>
-          <main className="flex relative flex-col bg-site text-roz">
+          <main className="flex relative flex-col bg-site text-roz w-full ">
             <Header />
             {children}
 
