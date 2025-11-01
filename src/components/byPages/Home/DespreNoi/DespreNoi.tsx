@@ -33,21 +33,30 @@ const DespreNoi = () => {
             </div>
           ))}
         </div>
-        <div className="flex max-w-3xl flex-col gap-6 text-[#4d2a2e]">
+        <div className="flex max-w-4xl flex-col gap-6 text-[#4d2a2e]">
           <h2 className="text-xl font-medium sm:text-2xl">
             Rose Dimat este o afacere de familie născută din dragostea și respectul
-            față de natură.
+            față de natură, dedicată exclusiv distilării apei de trandafiri de Damasc.
           </h2>
           <p className="text-base leading-relaxed sm:text-lg">
-            Cultivăm trandafiri de Damasc în grădinile noastre din România și îi
-            transformăm în produse autentice, create manual. Fiecare colecție este
-            realizată în loturi mici, cu atenție la detalii și grijă pentru oameni și
-            mediu.
+            Cultivăm trandafiri în Valea Trandafirilor din județul Argeș și îi
+            transformăm într-un singur produs, pentru a păstra controlul deplin asupra
+            calității. Apa noastră este obținută prin distilare lentă la abur, într-un
+            atelier certificat, cu loturi limitate și trasabilitate pentru fiecare
+            sticlă.
           </p>
           <p className="text-base leading-relaxed sm:text-lg">
-            Viziunea noastră este să păstrăm tradițiile artizanale și să aducem în
-            casele voastre aroma pură a petalelor, prin produse curate, transparente
-            și elegante.
+            Suntem implicați în fiecare etapă – de la cultivarea fără pesticide, la
+            culegerea manuală la răsărit și îmbutelierea în sticlă reciclabilă.
+            Colaborăm cu laboratoare dermatologice din Cluj-Napoca pentru a testa
+            toleranța pielii sensibile și pentru a garanta o experiență sigură și
+            eficientă.
+          </p>
+          <p className="text-base leading-relaxed sm:text-lg">
+            Rose Dimat este mai mult decât o marcă: este o invitație la un ritual
+            autentic, inspirat de tradițiile balcanice, dar adaptat modernului, cu un
+            parfum floral persistent, apreciat de terapeuți spa și make-up artiști din
+            întreaga țară.
           </p>
         </div>
         <section

@@ -2,9 +2,6 @@ import ApaTrandafiri from "@/public/imagini/apa.png";
 import BannerDreapta from "@/public/imagini/banner-lateral-dreapta.svg";
 import BannerStanga from "@/public/imagini/banner-lateral-stanga.svg";
 
-import PetaleTrandafiri from "@/public/imagini/petale.png";
-import UleiTrandafiri from "@/public/imagini/ulei.png";
-
 import Produs from "./Produs";
 
 const HrProduse = ({ className }: { className?: string }) => {
@@ -61,43 +58,25 @@ const ProduseSection = () => {
       <div className="relative z-10 flex w-full max-w-6xl flex-col items-center gap-16 text-center">
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-3xl font-semibold text-[#3f1f24] sm:text-4xl">
-            Produse din petale de trandafir culese manual
+            Apa de trandafiri Rose Dimat
           </h1>
           <p className="max-w-3xl text-base text-[#4d2a2e]/80 sm:text-lg">
-            O selecție rafinată de apă, ulei și petale de trandafir de Damasc,
-            obținute responsabil și îmbuteliate în loturi mici pentru a păstra aroma
-            autentică a florilor.
+            Distilăm un singur produs pentru că punem toate resursele în perfecționarea
+            apei de trandafiri. Fiecare sticlă concentrează prospețimea petalelor
+            culese manual și apa de izvor filtrată natural, oferind un tonic facial
+            premium, potrivit pentru aromaterapie, îngrijirea părului și ritualurile
+            spa de acasă.
           </p>
         </div>
         <HrProduse className="max-w-3xl" />
-        <div className="flex w-full flex-col gap-16">
-          <Produs
-            src={ApaTrandafiri}
-            titlu="Apa de trandafir"
-            descriere="Transformă-ți rutina într-o experiență florală."
-            continutProdus="100% apă din petale de trandafiri de Damasc"
-            pret="25 RON"
-            cantitate="100 ml"
-          />
-          <HrProduse className="max-w-3xl self-center" />
-          <Produs
-            src={UleiTrandafiri}
-            titlu="Ulei esențial de trandafir"
-            descriere="Un elixir prețios pentru piele și simțuri."
-            continutProdus="100% ulei din petale de trandafiri de Damasc"
-            pret="450 RON"
-            cantitate="2 ml"
-          />
-          <HrProduse className="max-w-3xl self-center" />
-          <Produs
-            src={PetaleTrandafiri}
-            titlu="Petale de trandafir"
-            descriere="Petale proaspete culese la primele ore ale dimineții."
-            continutProdus="100% petale de trandafiri de Damasc proaspete"
-            pret="40 RON"
-            cantitate="1 kg"
-          />
-        </div>
+        <Produs
+          src={ApaTrandafiri}
+          titlu="Apă de trandafiri de Damasc"
+          descriere="Transformă-ți rutina de îngrijire într-un moment de rafinament olfactiv și vizual, cu note delicate, floral-condimentate."
+          continutProdus="Ingrediente: apă distilată din petale proaspete de trandafiri de Damasc, fără alcool, fără coloranți"
+          pret="85 RON"
+          cantitate="200 ml"
+        />
       </div>
     </section>
   );
