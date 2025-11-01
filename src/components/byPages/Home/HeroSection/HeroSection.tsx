@@ -1,119 +1,131 @@
-import { motion, useInView } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
-import Background1 from "@/public/imagini/hero/hero1.png";
-import Background2 from "@/public/imagini/hero/hero2.png";
-import Background3 from "@/public/imagini/hero/hero3.png";
-import Background4 from "@/public/imagini/hero/hero4.png";
-import Background5 from "@/public/imagini/hero/hero5.png";
-import { useRef } from "react";
 const HeroSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
-  const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
   return (
     <section
-      className="h-screen  flex  relative items-center justify-center w-full bg-site md:px-24 py-8 overflow-hidden  "
       id="hero-section"
+      className="relative isolate flex w-full justify-center overflow-hidden bg-site"
     >
-      <div
-        ref={ref}
-        className="  right-0 z-40  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  text-center flex flex-col gap-6"
-      >
-        <motion.h1
-          initial={{ y: "40%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 3 }}
-          className={`text-[3vw]   text-crem  font-bold   `}
-        >
-          ROSE DIMAT
-        </motion.h1>
-        <motion.span
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 3.3 }}
-          className={`text-[2vw]   text-crem  font-bold   `}
-        >
-          Arta creata din petalele naturii
-        </motion.span>
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-y-0 right-[-20%] w-[65%] rounded-full bg-roz/10 blur-3xl md:right-[-10%]" />
+        <div className="absolute bottom-[-30%] left-[-10%] h-64 w-64 rounded-full bg-verde/10 blur-3xl sm:h-96 sm:w-96" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#f6f3db] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-white to-transparent" />
       </div>
-
-      <div
-        className="flex relative bg-site h-[600px] gap-0 justify-center w-full rounded-l-2xl   overflow-hidden"
-        id="container-imagini-hero "
-      >
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center gap-16 px-4 pb-20 pt-24 text-center sm:px-6 lg:gap-20 lg:px-8 lg:pb-24 lg:pt-32">
         <motion.div
-          initial={{ y: "-100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 0.3 }}
-          transition={{ duration: 1, delay: 2 }}
-          className="absolute z-20  top-0 bottom-0 left-0 right-0  bg-black"
-        />
-        <motion.div
-          initial={{ y: "-20%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="overflow-hidden w-1/5 m-0 "
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex w-full max-w-3xl flex-col items-center gap-6 text-center"
         >
-          <Image
-            alt="background"
-            className=" absolute z-10 w-full"
-            src={Background1}
-            placeholder="blur"
-          />
-        </motion.div>{" "}
-        <motion.div
-          initial={{ y: "20%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.7, delay: 0.8 }}
-          className="overflow-hidden w-1/5 m-0"
-        >
-          <Image
-            alt="background"
-            className=" absolute z-10 w-full"
-            src={Background2}
-            placeholder="blur"
-          />
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 rounded-full border border-roz/30 bg-white/60 px-4 py-1 text-xs font-medium uppercase tracking-[0.25em] text-roz backdrop-blur sm:text-sm"
+          >
+            Apă de trandafiri artizanală
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-4xl font-semibold text-[#3f1f24] sm:text-5xl lg:text-6xl"
+          >
+            ROSE DIMAT – Ritualul complet cu apă de trandafiri de Damasc
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-lg leading-relaxed text-[#4d2a2e] sm:text-xl"
+          >
+            Tonifică, parfumează și iluminează pielea cu singurul produs pe care îl
+            creăm: apa de trandafiri Rose Dimat, distilată lent din petale culese la
+            răsărit în livezile noastre din România. Formula pură, fără alcool,
+            păstrează intact parfumul damascen autentic pentru a reda strălucire
+            tenului și starea de bine ritualului tău zilnic.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center"
+          >
+            <Link
+              href="#produse"
+              className="inline-flex items-center justify-center rounded-full bg-roz px-8 py-3 text-base font-semibold text-crem shadow-lg shadow-roz/20 transition hover:bg-[#c05c55]"
+            >
+              Comandă apa de trandafiri
+            </Link>
+            <a
+              href="#despre-noi"
+              className="inline-flex items-center justify-center rounded-full border border-[#d9c9aa] px-8 py-3 text-base font-semibold text-[#3f1f24] transition hover:border-roz hover:text-roz"
+            >
+              Povestea noastră
+            </a>
+          </motion.div>
+          <motion.ul
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            viewport={{ once: true }}
+            className="grid w-full gap-4 text-left sm:grid-cols-2"
+          >
+            {[
+              "Distilare la abur din petale de Damasc culese manual",
+              "Certificare dermatologică pentru toate tipurile de piele",
+              "Livrare rapidă în toată țara și abonamente flexibile",
+              "Ambalaj din sticlă reciclată și etichetă eco-friendly",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-2xl bg-white/70 p-4 text-sm text-[#4d2a2e] shadow-sm shadow-roz/10 backdrop-blur"
+              >
+                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-roz" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </motion.ul>
         </motion.div>
-        <motion.div
-          initial={{ y: "-20%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.4, delay: 1.1 }}
-          className="overflow-hidden w-1/5"
+        <motion.dl
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="grid w-full max-w-4xl gap-6 rounded-[40px] bg-white/70 p-6 text-left shadow-lg shadow-roz/10 backdrop-blur sm:grid-cols-3"
         >
-          <Image
-            alt="background"
-            className=" relative z-10 w-full"
-            src={Background3}
-            placeholder="blur"
-          />
-        </motion.div>{" "}
-        <motion.div
-          initial={{ y: "20%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.1, delay: 1.4 }}
-          className="overflow-hidden w-1/5"
-        >
-          <Image
-            alt="background"
-            className=" relative z-10 w-full "
-            src={Background4}
-            placeholder="blur"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ y: "-10%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.7 }}
-          className="overflow-hidden w-1/5"
-        >
-          <Image
-            alt="background"
-            className=" relative z-10 w-full "
-            src={Background5}
-            placeholder="blur"
-          />
-        </motion.div>
+          {[
+            {
+              title: "Preț transparent",
+              value: "85 RON",
+              description: "sticla de 200 ml cu pulverizator premium",
+            },
+            {
+              title: "Proces lent",
+              value: "12 ore",
+              description: "distilare tradițională la temperatură controlată",
+            },
+            {
+              title: "Origine locală",
+              value: "Valea Trandafirilor",
+              description: "plantanție proprie din județul Argeș",
+            },
+          ].map(({ title, value, description }) => (
+            <div key={title} className="rounded-3xl bg-gradient-to-br from-white to-roz/10 p-6 shadow-inner shadow-roz/10">
+              <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-roz">{title}</dt>
+              <dd className="mt-3 text-3xl font-semibold text-[#3f1f24]">{value}</dd>
+              <p className="mt-2 text-sm text-[#4d2a2e]/80">{description}</p>
+            </div>
+          ))}
+        </motion.dl>
       </div>
     </section>
   );

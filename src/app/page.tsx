@@ -2,6 +2,10 @@
 import DespreNoi from "@/components/byPages/Home/DespreNoi/DespreNoi";
 import HeroSection from "@/components/byPages/Home/HeroSection/HeroSection";
 import ProduseSection from "@/components/byPages/Home/Produse/ProduseSection";
+import BenefitsSection from "@/components/byPages/Home/Sections/BenefitsSection";
+import FAQSection from "@/components/byPages/Home/Sections/FAQSection";
+import RitualSection from "@/components/byPages/Home/Sections/RitualSection";
+import TestimonialsSection from "@/components/byPages/Home/Sections/TestimonialsSection";
 import { ReactNode } from "react";
 
 const BackgroundSection = ({
@@ -18,8 +22,14 @@ const BackgroundSection = ({
 
 export default function Home() {
   return (
-    <section className="flex mt-[60px]  flex-col  items-center  justify-between relative ">
-      <HeroSection /> <ProduseSection /> <DespreNoi />
+    <section className="flex flex-col items-center gap-24 pt-[60px]">
+      <HeroSection />
+      <ProduseSection />
+      <BenefitsSection />
+      <RitualSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <DespreNoi />
     </section>
   );
 }

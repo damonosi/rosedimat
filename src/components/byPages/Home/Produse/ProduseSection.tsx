@@ -2,9 +2,6 @@ import ApaTrandafiri from "@/public/imagini/apa.png";
 import BannerDreapta from "@/public/imagini/banner-lateral-dreapta.svg";
 import BannerStanga from "@/public/imagini/banner-lateral-stanga.svg";
 
-import PetaleTrandafiri from "@/public/imagini/petale.png";
-import UleiTrandafiri from "@/public/imagini/ulei.png";
-
 import Produs from "./Produs";
 
 const HrProduse = ({ className }: { className?: string }) => {
@@ -48,49 +45,40 @@ const HrProduse = ({ className }: { className?: string }) => {
 };
 const ProduseSection = () => {
   return (
-    <div className="flex flex-col text-center w-full pt-24 px-2 md:px-96 relative overflow-hidden ">
-      <h1 className="text-3xl text-roz ">
-        Produse din petale de trandafir culese manual
-      </h1>
-
-      <HrProduse />
-      <BannerStanga
-        alt="banner-stanga"
-        className="absolute left-0 w-[281px] h-[772px]  top-0"
-      />
-      <BannerDreapta
-        alt="banner-dreapta"
-        className="absolute right-0 w-[281px] h-[772px]  top-1/2 "
-      />
-      <section id="produse">
+    <section
+      id="produse"
+      className="relative flex w-full justify-center overflow-hidden bg-gradient-to-b from-white to-site px-4 py-20 sm:px-6 lg:px-8"
+    >
+      <div className="pointer-events-none absolute inset-y-0 left-0 hidden lg:flex">
+        <BannerStanga className="h-full w-auto opacity-60" />
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden lg:flex">
+        <BannerDreapta className="h-full w-auto opacity-60" />
+      </div>
+      <div className="relative z-10 flex w-full max-w-6xl flex-col items-center gap-16 text-center">
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="text-3xl font-semibold text-[#3f1f24] sm:text-4xl">
+            Apa de trandafiri Rose Dimat
+          </h1>
+          <p className="max-w-3xl text-base text-[#4d2a2e]/80 sm:text-lg">
+            Distilăm un singur produs pentru că punem toate resursele în perfecționarea
+            apei de trandafiri. Fiecare sticlă concentrează prospețimea petalelor
+            culese manual și apa de izvor filtrată natural, oferind un tonic facial
+            premium, potrivit pentru aromaterapie, îngrijirea părului și ritualurile
+            spa de acasă.
+          </p>
+        </div>
+        <HrProduse className="max-w-3xl" />
         <Produs
           src={ApaTrandafiri}
-          titlu="Apa de trandafir"
-          descriere=" Transforma-ti rutina intr-o experienta florala"
-          continutProdus="100 % apa din petale de trandafiri de damasc"
-          pret="25 Ron"
-          cantitate="100 ml"
+          titlu="Apă de trandafiri de Damasc"
+          descriere="Transformă-ți rutina de îngrijire într-un moment de rafinament olfactiv și vizual, cu note delicate, floral-condimentate."
+          continutProdus="Ingrediente: apă distilată din petale proaspete de trandafiri de Damasc, fără alcool, fără coloranți"
+          pret="85 RON"
+          cantitate="200 ml"
         />
-        <HrProduse />
-        <Produs
-          src={UleiTrandafiri}
-          titlu="Ulei esential de trandafir"
-          descriere=" Transforma-ti rutina intr-o experienta florala"
-          continutProdus="100 % ulei din petale de trandafiri de damasc"
-          pret="450 Ron"
-          cantitate="2 ml"
-        />
-        <HrProduse />
-        <Produs
-          src={PetaleTrandafiri}
-          titlu="Petale de trandafir"
-          descriere=" Transforma-ti rutina intr-o experienta florala"
-          continutProdus="100 %  petale de trandafiri de damasc proaspete"
-          pret="40 Ron"
-          cantitate="1 kg"
-        />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
