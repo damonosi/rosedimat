@@ -18,8 +18,10 @@ const BackgroundSection = ({
 
 export default function Home() {
   return (
-    <section className="flex mt-[60px]  flex-col  items-center  justify-between relative ">
-      <HeroSection /> <ProduseSection /> <DespreNoi />
+    <section className="flex flex-col items-center gap-24 pt-[60px]">
+      <HeroSection />
+      <ProduseSection />
+      <DespreNoi />
     </section>
   );
 }

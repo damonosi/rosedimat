@@ -48,49 +48,58 @@ const HrProduse = ({ className }: { className?: string }) => {
 };
 const ProduseSection = () => {
   return (
-    <div className="flex flex-col text-center w-full pt-24 px-2 md:px-96 relative overflow-hidden ">
-      <h1 className="text-3xl text-roz ">
-        Produse din petale de trandafir culese manual
-      </h1>
-
-      <HrProduse />
-      <BannerStanga
-        alt="banner-stanga"
-        className="absolute left-0 w-[281px] h-[772px]  top-0"
-      />
-      <BannerDreapta
-        alt="banner-dreapta"
-        className="absolute right-0 w-[281px] h-[772px]  top-1/2 "
-      />
-      <section id="produse">
-        <Produs
-          src={ApaTrandafiri}
-          titlu="Apa de trandafir"
-          descriere=" Transforma-ti rutina intr-o experienta florala"
-          continutProdus="100 % apa din petale de trandafiri de damasc"
-          pret="25 Ron"
-          cantitate="100 ml"
-        />
-        <HrProduse />
-        <Produs
-          src={UleiTrandafiri}
-          titlu="Ulei esential de trandafir"
-          descriere=" Transforma-ti rutina intr-o experienta florala"
-          continutProdus="100 % ulei din petale de trandafiri de damasc"
-          pret="450 Ron"
-          cantitate="2 ml"
-        />
-        <HrProduse />
-        <Produs
-          src={PetaleTrandafiri}
-          titlu="Petale de trandafir"
-          descriere=" Transforma-ti rutina intr-o experienta florala"
-          continutProdus="100 %  petale de trandafiri de damasc proaspete"
-          pret="40 Ron"
-          cantitate="1 kg"
-        />
-      </section>
-    </div>
+    <section
+      id="produse"
+      className="relative flex w-full justify-center overflow-hidden bg-gradient-to-b from-white to-site px-4 py-20 sm:px-6 lg:px-8"
+    >
+      <div className="pointer-events-none absolute inset-y-0 left-0 hidden lg:flex">
+        <BannerStanga className="h-full w-auto opacity-60" />
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden lg:flex">
+        <BannerDreapta className="h-full w-auto opacity-60" />
+      </div>
+      <div className="relative z-10 flex w-full max-w-6xl flex-col items-center gap-16 text-center">
+        <div className="flex flex-col items-center gap-4">
+          <h1 className="text-3xl font-semibold text-[#3f1f24] sm:text-4xl">
+            Produse din petale de trandafir culese manual
+          </h1>
+          <p className="max-w-3xl text-base text-[#4d2a2e]/80 sm:text-lg">
+            O selecție rafinată de apă, ulei și petale de trandafir de Damasc,
+            obținute responsabil și îmbuteliate în loturi mici pentru a păstra aroma
+            autentică a florilor.
+          </p>
+        </div>
+        <HrProduse className="max-w-3xl" />
+        <div className="flex w-full flex-col gap-16">
+          <Produs
+            src={ApaTrandafiri}
+            titlu="Apa de trandafir"
+            descriere="Transformă-ți rutina într-o experiență florală."
+            continutProdus="100% apă din petale de trandafiri de Damasc"
+            pret="25 RON"
+            cantitate="100 ml"
+          />
+          <HrProduse className="max-w-3xl self-center" />
+          <Produs
+            src={UleiTrandafiri}
+            titlu="Ulei esențial de trandafir"
+            descriere="Un elixir prețios pentru piele și simțuri."
+            continutProdus="100% ulei din petale de trandafiri de Damasc"
+            pret="450 RON"
+            cantitate="2 ml"
+          />
+          <HrProduse className="max-w-3xl self-center" />
+          <Produs
+            src={PetaleTrandafiri}
+            titlu="Petale de trandafir"
+            descriere="Petale proaspete culese la primele ore ale dimineții."
+            continutProdus="100% petale de trandafiri de Damasc proaspete"
+            pret="40 RON"
+            cantitate="1 kg"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
