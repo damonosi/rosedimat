@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
 interface IProdus {
-  src: StaticImageData;
+  src: StaticImageData | string;
   titlu: string;
   descriere: string;
   pret: string;
@@ -43,7 +43,7 @@ const Produs = ({
               fill
               className="object-contain p-6 transition duration-500 group-hover:scale-105"
               sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 90vw"
-              placeholder="blur"
+              placeholder={typeof src === "string" ? "empty" : "blur"}
             />
           </div>
           <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center rounded-full bg-white/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-roz shadow-lg shadow-roz/30">

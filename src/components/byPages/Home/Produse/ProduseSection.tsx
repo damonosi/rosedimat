@@ -1,4 +1,4 @@
-import ApaTrandafiri from "@/public/imagini/apa.png";
+import ApaTrandafiri from "@/public/imagini/apa.svg?url";
 import BannerDreapta from "@/public/imagini/banner-lateral-dreapta.svg";
 import BannerStanga from "@/public/imagini/banner-lateral-stanga.svg";
 
