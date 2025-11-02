@@ -53,31 +53,25 @@ const MenuToggle = ({
   opened: boolean;
 }) => {
   return (
-    <button
+    <motion.button
       aria-expanded={opened}
       aria-controls="mobile-navigation"
       onClick={() => setOpenMenu(!opened)}
-      className="relative z-30 flex h-11 w-11 items-center justify-center rounded-full border border-roz/40 bg-roz/10 text-roz transition-all hover:scale-105 hover:bg-roz/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-roz/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site"
+      className="relative z-30 flex h-12 w-12 items-center justify-center rounded-full border border-roz/40 bg-roz/10 text-roz shadow-sm transition-colors hover:bg-roz/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-roz/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site"
+      whileTap={{ scale: 0.94 }}
     >
       <span className="sr-only">{opened ? "Închide meniul" : "Deschide meniul"}</span>
-      <span className="flex flex-col items-center justify-center space-y-1.5">
-        <span
-          className={`block h-0.5 w-5 rounded-full bg-roz transition-transform duration-300 ${
-            opened ? "translate-y-[7px] rotate-45" : ""
-          }`}
+      <motion.span
+        animate={{ rotate: opened ? 360 : 0, scale: opened ? 1.05 : 1 }}
+        transition={{ type: "spring", stiffness: 140, damping: 12 }}
+        className="flex h-9 w-9 items-center justify-center"
+      >
+        <Logo
+          className="h-full w-full text-roz"
+          aria-hidden="true"
         />
-        <span
-          className={`block h-0.5 w-4 rounded-full bg-roz transition-all duration-300 ${
-            opened ? "scale-x-0 opacity-0" : ""
-          }`}
-        />
-        <span
-          className={`block h-0.5 w-5 rounded-full bg-roz transition-transform duration-300 ${
-            opened ? "-translate-y-[7px] -rotate-45" : ""
-          }`}
-        />
-      </span>
-    </button>
+      </motion.span>
+    </motion.button>
   );
 };
 
