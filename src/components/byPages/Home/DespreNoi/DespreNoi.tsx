@@ -39,7 +39,7 @@ const DespreNoi = () => {
             față de natură, dedicată exclusiv distilării apei de trandafiri de Damasc.
           </h2>
           <p className="text-base leading-relaxed sm:text-lg">
-            Cultivăm trandafiri în Valea Trandafirilor din județul Argeș și îi
+            Cultivăm trandafiri în Valea Trandafirilor din județul Bacău și îi
             transformăm într-un singur produs, pentru a păstra controlul deplin asupra
             calității. Apa noastră este obținută prin distilare lentă la abur, într-un
             atelier certificat, cu loturi limitate și trasabilitate pentru fiecare

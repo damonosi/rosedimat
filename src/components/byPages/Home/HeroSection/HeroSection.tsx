@@ -102,11 +102,11 @@ const HeroSection = () => {
           viewport={{ once: true }}
           className="grid w-full max-w-4xl gap-6 rounded-[40px] bg-white/70 p-6 text-left shadow-lg shadow-roz/10 backdrop-blur sm:grid-cols-3"
         >
-          {[
+          {[ 
             {
               title: "Preț transparent",
-              value: "85 RON",
-              description: "sticla de 200 ml cu pulverizator premium",
+              value: "85 RON / 100ml",
+              description: "sticla de 100 ml cu pulverizator premium",
             },
             {
               title: "Proces lent",
@@ -116,7 +116,7 @@ const HeroSection = () => {
             {
               title: "Origine locală",
               value: "Valea Trandafirilor",
-              description: "plantanție proprie din județul Argeș",
+              description: "plantanție proprie din județul Bacău",
             },
           ].map(({ title, value, description }) => (
             <div key={title} className="rounded-3xl bg-gradient-to-br from-white to-roz/10 p-6 shadow-inner shadow-roz/10">
