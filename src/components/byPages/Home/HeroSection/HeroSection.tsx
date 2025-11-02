@@ -15,35 +15,35 @@ const HeroSection = () => {
       </div>
       <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center gap-16 px-4 pb-20 pt-24 text-center sm:px-6 lg:gap-20 lg:px-8 lg:pb-24 lg:pt-32">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 0.61, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.4 }}
           className="flex w-full max-w-3xl flex-col items-center gap-6 text-center"
         >
           <motion.span
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
+            viewport={{ once: true, amount: 0.4 }}
             className="inline-flex items-center gap-2 rounded-full border border-roz/30 bg-white/60 px-4 py-1 text-xs font-medium uppercase tracking-[0.25em] text-roz backdrop-blur sm:text-sm"
           >
             Apă de trandafiri artizanală
           </motion.span>
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.4 }}
             className="text-4xl font-semibold text-[#3f1f24] sm:text-5xl lg:text-6xl"
           >
             ROSE DIMAT – Ritualul complet cu apă de trandafiri de Damasc
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.4 }}
             className="text-lg leading-relaxed text-[#4d2a2e] sm:text-xl"
           >
             Tonifică, parfumează și iluminează pielea cu singurul produs pe care îl
@@ -53,10 +53,10 @@ const HeroSection = () => {
             tenului și starea de bine ritualului tău zilnic.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.4 }}
             className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center"
           >
             <Link
@@ -73,10 +73,10 @@ const HeroSection = () => {
             </a>
           </motion.div>
           <motion.ul
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.6, ease: [0.22, 0.61, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.4 }}
             className="grid w-full gap-4 text-left sm:grid-cols-2"
           >
             {[
@@ -96,10 +96,10 @@ const HeroSection = () => {
           </motion.ul>
         </motion.div>
         <motion.dl
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.35 }}
           className="grid w-full max-w-4xl gap-6 rounded-[40px] bg-white/70 p-6 text-left shadow-lg shadow-roz/10 backdrop-blur sm:grid-cols-3"
         >
           {[ 

@@ -41,10 +41,14 @@ const BenefitsSection = () => {
           {benefits.map(({ title, description }, index) => (
             <motion.article
               key={title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              transition={{
+                duration: 0.45,
+                delay: 0.15 + index * 0.08,
+                ease: [0.22, 0.61, 0.36, 1],
+              }}
+              viewport={{ once: true, amount: 0.35 }}
               className="flex h-full flex-col gap-4 rounded-3xl bg-site p-6 text-left shadow-lg shadow-roz/10 ring-1 ring-roz/10"
             >
               <h3 className="text-xl font-semibold text-[#3f1f24]">{title}</h3>
