@@ -8,6 +8,12 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 
+const NAV_ITEMS = [
+  { href: "/", label: "Produse" },
+  { href: "/", label: "Despre noi" },
+  { href: "/", label: "Contact" },
+];
+
 const PatratRoz = ({ scrollDirection }: { scrollDirection: string }) => {
   return (
     <AnimatePresence>
@@ -30,11 +36,7 @@ const PatratRoz = ({ scrollDirection }: { scrollDirection: string }) => {
   );
 };
 const LogoLink = ({ scrollDirection }: { scrollDirection: string }) => (
-  <Link
-    href="/"
-    id="container-logo"
-    className="relative z-30"
-  >
+  <Link href="/" id="container-logo" className="relative z-30">
     <Logo
       className={`w-12 h-12 hover:scale-110 transform-gpu transition duration-500 hover:rotate-[360deg] ${
         scrollDirection === "down" && "rotate-[360deg]"
@@ -42,44 +44,67 @@ const LogoLink = ({ scrollDirection }: { scrollDirection: string }) => (
     />
   </Link>
 );
-const LogoMenu = ({
+
+const MenuToggle = ({
   setOpenMenu,
   opened,
 }: {
-  setOpenMenu: (arg0: boolean) => void;
+  setOpenMenu: (value: boolean) => void;
   opened: boolean;
 }) => {
   return (
-    <button
-      id="container-logo"
-      className="relative z-30"
+    <motion.button
+      aria-expanded={opened}
+      aria-controls="mobile-navigation"
       onClick={() => setOpenMenu(!opened)}
+      className="relative z-30 flex h-12 w-12 items-center justify-center rounded-full border border-roz/40 bg-roz/10 text-roz shadow-sm transition-colors hover:bg-roz/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-roz/60 focus-visible:ring-offset-2 focus-visible:ring-offset-site"
+      whileTap={{ scale: 0.94 }}
     >
-      <Logo
-        className={`w-12 h-12 hover:scale-110 transform-gpu transition duration-500 hover:rotate-[360deg] 
-       `}
-      />
-    </button>
+      <span className="sr-only">{opened ? "Închide meniul" : "Deschide meniul"}</span>
+      <motion.span
+        animate={{ rotate: opened ? 360 : 0, scale: opened ? 1.05 : 1 }}
+        transition={{ type: "spring", stiffness: 140, damping: 12 }}
+        className="flex h-9 w-9 items-center justify-center"
+      >
+        <Logo
+          className="h-full w-full text-roz"
+          aria-hidden="true"
+        />
+      </motion.span>
+    </motion.button>
   );
 };
 
-const Navigation = ({ scrollDirection }: { scrollDirection?: string }) => (
-  <nav
-    className={`z-30 flex w-full items-center justify-center gap-6 text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-500 md:w-1/2 ${
-      scrollDirection === "down" ? "text-[#3f1f24]/80" : "text-[#3f1f24]"
-    }`}
-  >
-    <Link href="/" className="relative py-2 transition-colors hover:text-roz">
-      Produse
-    </Link>
-    <Link href="/" className="relative py-2 transition-colors hover:text-roz">
-      Despre noi
-    </Link>
-    <Link href="/" className="relative py-2 transition-colors hover:text-roz">
-      Contact
-    </Link>
-  </nav>
-);
+const Navigation = ({
+  scrollDirection,
+  variant = "desktop",
+}: {
+  scrollDirection?: string;
+  variant?: "desktop" | "mobile";
+}) => {
+  const isDesktop = variant === "desktop";
+  const baseClasses = isDesktop
+    ? "z-30 flex w-full items-center justify-center gap-6 text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-500 md:w-1/2"
+    : "flex w-full flex-col items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em]";
+  const textClasses = isDesktop
+    ? scrollDirection === "down"
+      ? "text-[#3f1f24]/80"
+      : "text-[#3f1f24]"
+    : "text-[#3f1f24]";
+  const linkClasses = isDesktop
+    ? "relative py-2 transition-colors hover:text-roz"
+    : "relative w-full rounded-full border border-transparent bg-white/70 px-6 py-3 text-center tracking-[0.35em] text-[#3f1f24]/90 shadow-sm transition hover:border-roz/40 hover:bg-white hover:text-roz";
+
+  return (
+    <nav className={`${baseClasses} ${textClasses}`} id={isDesktop ? undefined : "mobile-navigation"}>
+      {NAV_ITEMS.map((item) => (
+        <Link key={item.label} href={item.href} className={linkClasses}>
+          {item.label}
+        </Link>
+      ))}
+    </nav>
+  );
+};
 
 const InfoBanner = () => (
   <div className="hidden w-full items-center justify-center bg-roz/20 py-1 text-xs font-semibold tracking-widest text-roz md:flex">
@@ -98,10 +123,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 z-50 w-screen bg-gradient-to-r from-site via-site/95 to-site/90 shadow-lg">
       <InfoBanner />
-      <section
-        className="hidden h-[72px] w-full items-center justify-between px-10 md:flex lg:px-24"
-        id="desktop"
-      >
+      <section className="hidden h-[72px] w-full items-center justify-between px-10 md:flex lg:px-24" id="desktop">
         <div className="flex items-center gap-6">
           <LogoLink scrollDirection={scrollDirection} />
           <div className="flex flex-col text-xs font-medium tracking-widest text-[#3f1f24]">
@@ -121,7 +143,7 @@ const Header = () => {
       </section>
       <section
         id="mobile"
-        className="relative flex h-[72px] w-full flex-col items-center justify-center gap-1 bg-site/95 px-4 py-2 text-[#3f1f24] shadow-lg md:hidden"
+        className="relative flex h-[72px] w-full flex-col items-center justify-center gap-1 border-b border-roz/10 bg-gradient-to-r from-site via-site/95 to-crem/80 px-4 py-2 text-[#3f1f24] shadow-lg md:hidden"
       >
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-col text-xs font-semibold uppercase tracking-[0.2em]">
@@ -130,29 +152,50 @@ const Header = () => {
               Trandafiri din Județul Bacău · 100ml
             </span>
           </div>
-          <LogoMenu opened={opened} setOpenMenu={setOpenMenu} />
+          <MenuToggle opened={opened} setOpenMenu={setOpenMenu} />
         </div>
         <AnimatePresence>
           {opened && (
-            <motion.div
-              key="meniuMobile"
-              initial={{ y: "-30%", opacity: 0 }}
-              animate={{ y: "0", opacity: 1 }}
-              exit={{ y: "-10%", opacity: 0 }}
-              className="absolute left-0 right-0 top-full flex flex-col items-center gap-2 bg-site/95 px-6 pb-4 pt-6 text-roz shadow-lg"
-            >
-              <motion.hr
-                initial={{ x: "-100%" }}
-                animate={{ x: "0" }}
-                transition={{ delay: 0.35 }}
-                exit={{ x: "-50%", opacity: 0 }}
-                className="h-1 w-full rounded-full bg-roz"
+            <>
+              <motion.div
+                key="mobileOverlay"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.95 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-x-0 top-full bottom-0 z-20 bg-[#3f1f24]/70 backdrop-blur"
+                onClick={() => setOpenMenu(false)}
               />
-              <Navigation />
-              <p className="text-[11px] uppercase tracking-widest text-roz/70">
-                Prețurile sunt calculate pentru 100ml de esență
-              </p>
-            </motion.div>
+              <motion.div
+                key="meniuMobile"
+                initial={{ y: "-20%", opacity: 0 }}
+                animate={{ y: "0", opacity: 1 }}
+                exit={{ y: "-10%", opacity: 0 }}
+                transition={{ type: "spring", stiffness: 160, damping: 18 }}
+                className="absolute left-4 right-4 top-[calc(100%+0.75rem)] z-30 flex flex-col items-center gap-5 rounded-3xl border border-roz/20 bg-gradient-to-br from-site via-site to-crem px-6 pb-6 pt-7 text-[#3f1f24] shadow-2xl"
+              >
+                <motion.hr
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  exit={{ scaleX: 0, opacity: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="h-1 w-full rounded-full bg-roz"
+                />
+                <Navigation variant="mobile" />
+                <div className="flex flex-col items-center gap-3 text-[11px] uppercase tracking-[0.35em] text-roz/80">
+                  <p className="text-center text-[#3f1f24]/70">
+                    Prețurile sunt calculate pentru 100ml de esență
+                  </p>
+                  <Link
+                    href="/"
+                    className="inline-flex items-center justify-center rounded-full border border-roz/40 bg-roz/10 px-6 py-2 text-[11px] font-semibold tracking-[0.35em] text-roz transition hover:bg-roz/20"
+                    onClick={() => setOpenMenu(false)}
+                  >
+                    Scrie-ne
+                  </Link>
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </section>
