@@ -160,10 +160,10 @@ const Header = () => {
               <motion.div
                 key="mobileOverlay"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
+                animate={{ opacity: 0.95 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-x-0 top-full bottom-0 z-20 bg-[#3f1f24]/30 backdrop-blur-sm"
+                className="absolute inset-x-0 top-full bottom-0 z-20 bg-[#3f1f24]/70 backdrop-blur"
                 onClick={() => setOpenMenu(false)}
               />
               <motion.div
@@ -172,7 +172,7 @@ const Header = () => {
                 animate={{ y: "0", opacity: 1 }}
                 exit={{ y: "-10%", opacity: 0 }}
                 transition={{ type: "spring", stiffness: 160, damping: 18 }}
-                className="absolute left-4 right-4 top-[calc(100%+0.75rem)] z-30 flex flex-col items-center gap-5 rounded-3xl border border-roz/20 bg-gradient-to-br from-site via-site/95 to-crem/80 px-6 pb-6 pt-7 text-[#3f1f24] shadow-2xl"
+                className="absolute left-4 right-4 top-[calc(100%+0.75rem)] z-30 flex flex-col items-center gap-5 rounded-3xl border border-roz/20 bg-gradient-to-br from-site via-site to-crem px-6 pb-6 pt-7 text-[#3f1f24] shadow-2xl"
               >
                 <motion.hr
                   initial={{ scaleX: 0 }}
