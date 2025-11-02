@@ -14,15 +14,15 @@ const PatratRoz = ({ scrollDirection }: { scrollDirection: string }) => {
       <motion.svg
         viewBox="0 0 405 60"
         fill="none"
-        animate={{ width: scrollDirection === "down" ? "100%" : "30%" }}
-        transition={{ ease: "easeOut", duration: 2 }}
-        className={`absolute h-[60px] top-0 right-0  bottom-0   `}
+        animate={{ width: scrollDirection === "down" ? "100%" : "38%" }}
+        transition={{ ease: "easeOut", duration: 1.6 }}
+        className="absolute top-0 right-0 bottom-0 h-[60px]"
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          opacity="0.8"
+          opacity="0.85"
           d="M1920 60H-2.90302e-06L147.162 0H1920V60Z"
-          className=" h-[60px]"
+          className="h-[60px]"
           fill="#D3736D"
         />
       </motion.svg>
@@ -65,32 +65,28 @@ const LogoMenu = ({
 
 const Navigation = ({ scrollDirection }: { scrollDirection?: string }) => (
   <nav
-    className={`z-30 flex gap-4 md:justify-end w-full md:w-1/2 items-center justify-center ${
-      scrollDirection === "down" && "text-site"
+    className={`z-30 flex w-full items-center justify-center gap-6 text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-500 md:w-1/2 ${
+      scrollDirection === "down" ? "text-roz/80" : "text-roz"
     }`}
   >
-    <Link
-      href="/"
-      id="container-logo"
-      className="relative hover:scale-110 "
-    >
+    <Link href="/" className="relative py-2 hover:text-roz/70">
       Produse
     </Link>
-    <Link
-      href="/"
-      id="container-logo"
-      className="relative hover:scale-110"
-    >
+    <Link href="/" className="relative py-2 hover:text-roz/70">
       Despre noi
     </Link>
-    <Link
-      href="/"
-      id="container-logo"
-      className="relative hover:scale-110"
-    >
+    <Link href="/" className="relative py-2 hover:text-roz/70">
       Contact
     </Link>
   </nav>
+);
+
+const InfoBanner = () => (
+  <div className="hidden w-full items-center justify-center bg-roz/20 py-1 text-xs font-semibold tracking-widest text-roz md:flex">
+    <span className="mr-2 text-[11px] uppercase">Trandafiri din Județul Bacău</span>
+    <span className="h-1 w-1 rounded-full bg-roz/60" />
+    <span className="ml-2 text-[11px] uppercase">Preț afișat pentru 100ml</span>
+  </div>
 );
 
 const Header = () => {
@@ -100,56 +96,64 @@ const Header = () => {
   let scrollDirection = useScrollDirection();
 
   return (
-    <header className=" fixed bg-site w-screen h-[60px] z-50   ">
+    <header className="fixed top-0 z-50 w-screen bg-gradient-to-r from-site via-site/95 to-site/90 shadow-lg">
+      <InfoBanner />
       <section
-        className="hidden md:flex   w-full  md:px-36 items-center h-[60px] justify-between "
+        className="hidden h-[72px] w-full items-center justify-between px-10 md:flex lg:px-24"
         id="desktop"
       >
-        <LogoLink scrollDirection={scrollDirection} />
+        <div className="flex items-center gap-6">
+          <LogoLink scrollDirection={scrollDirection} />
+          <div className="flex flex-col text-xs font-medium tracking-widest text-roz/80">
+            <span className="uppercase">Rose Dimat</span>
+            <span className="text-[11px] uppercase">Esențe artizanale din România</span>
+          </div>
+        </div>
 
         <Navigation scrollDirection={scrollDirection} />
 
-        <div
-          className=" flex  h-full  justify-center "
-          id="cart"
-        >
-          <button className="z-30 ">
-            <Cart
-              alt="cart"
-              className="w-8 h-8 hover:scale-110"
-            />
+        <div className="relative flex h-full items-center justify-center" id="cart">
+          <button className="z-30 flex h-11 w-11 items-center justify-center rounded-full border border-roz/40 bg-roz/10 text-roz backdrop-blur transition hover:scale-105 hover:bg-roz/20">
+            <Cart alt="cart" className="h-5 w-5" />
           </button>
           <PatratRoz scrollDirection={scrollDirection} />
         </div>
       </section>
       <section
         id="mobile"
-        className="md:hidden relative flex w-full justify-between h-[60px] items-center px-2"
+        className="relative flex h-[72px] w-full flex-col items-center justify-center gap-1 bg-site/95 px-4 py-2 text-roz shadow-lg md:hidden"
       >
-        <h1>ROSE DIMAT</h1>
-        <LogoMenu
-          opened={opened}
-          setOpenMenu={setOpenMenu}
-        />{" "}
+        <div className="flex w-full items-center justify-between">
+          <div className="flex flex-col text-xs font-semibold uppercase tracking-[0.2em]">
+            <span>Rose Dimat</span>
+            <span className="text-[10px] font-normal tracking-widest text-roz/70">
+              Trandafiri din Județul Bacău · 100ml
+            </span>
+          </div>
+          <LogoMenu opened={opened} setOpenMenu={setOpenMenu} />
+        </div>
         <AnimatePresence>
           {opened && (
             <motion.div
               key="meniuMobile"
-              initial={{ y: "-50%", opacity: 0 }}
+              initial={{ y: "-30%", opacity: 0 }}
               animate={{ y: "0", opacity: 1 }}
               exit={{ y: "-10%", opacity: 0 }}
-              className="absolute z-10 right-0 left-0 flex-col px-2 flex justify-center items-center h-16 top-full bg-site"
+              className="absolute left-0 right-0 top-full flex flex-col items-center gap-2 bg-site/95 px-6 pb-4 pt-6 text-roz shadow-lg"
             >
               <motion.hr
                 initial={{ x: "-100%" }}
                 animate={{ x: "0" }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.35 }}
                 exit={{ x: "-50%", opacity: 0 }}
-                className="w-full h-1 bg-roz rounded-r-xl rounded-l-xl "
+                className="h-1 w-full rounded-full bg-roz"
               />
               <Navigation />
+              <p className="text-[11px] uppercase tracking-widest text-roz/70">
+                Prețurile sunt calculate pentru 100ml de esență
+              </p>
             </motion.div>
-          )}{" "}
+          )}
         </AnimatePresence>
       </section>
     </header>
