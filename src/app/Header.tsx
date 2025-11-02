@@ -66,16 +66,16 @@ const LogoMenu = ({
 const Navigation = ({ scrollDirection }: { scrollDirection?: string }) => (
   <nav
     className={`z-30 flex w-full items-center justify-center gap-6 text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-500 md:w-1/2 ${
-      scrollDirection === "down" ? "text-site" : "text-white"
+      scrollDirection === "down" ? "text-roz/80" : "text-roz"
     }`}
   >
-    <Link href="/" className="relative py-2 hover:text-roz">
+    <Link href="/" className="relative py-2 hover:text-roz/70">
       Produse
     </Link>
-    <Link href="/" className="relative py-2 hover:text-roz">
+    <Link href="/" className="relative py-2 hover:text-roz/70">
       Despre noi
     </Link>
-    <Link href="/" className="relative py-2 hover:text-roz">
+    <Link href="/" className="relative py-2 hover:text-roz/70">
       Contact
     </Link>
   </nav>
@@ -104,7 +104,7 @@ const Header = () => {
       >
         <div className="flex items-center gap-6">
           <LogoLink scrollDirection={scrollDirection} />
-          <div className="flex flex-col text-xs font-medium tracking-widest text-white/70">
+          <div className="flex flex-col text-xs font-medium tracking-widest text-roz/80">
             <span className="uppercase">Rose Dimat</span>
             <span className="text-[11px] uppercase">Esențe artizanale din România</span>
           </div>
@@ -113,7 +113,7 @@ const Header = () => {
         <Navigation scrollDirection={scrollDirection} />
 
         <div className="relative flex h-full items-center justify-center" id="cart">
-          <button className="z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur transition hover:scale-105 hover:bg-white/20">
+          <button className="z-30 flex h-11 w-11 items-center justify-center rounded-full border border-roz/40 bg-roz/10 text-roz backdrop-blur transition hover:scale-105 hover:bg-roz/20">
             <Cart alt="cart" className="h-5 w-5" />
           </button>
           <PatratRoz scrollDirection={scrollDirection} />
@@ -121,12 +121,12 @@ const Header = () => {
       </section>
       <section
         id="mobile"
-        className="relative flex h-[72px] w-full flex-col items-center justify-center gap-1 bg-site/95 px-4 py-2 text-white shadow-lg md:hidden"
+        className="relative flex h-[72px] w-full flex-col items-center justify-center gap-1 bg-site/95 px-4 py-2 text-roz shadow-lg md:hidden"
       >
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-col text-xs font-semibold uppercase tracking-[0.2em]">
             <span>Rose Dimat</span>
-            <span className="text-[10px] font-normal tracking-widest text-white/70">
+            <span className="text-[10px] font-normal tracking-widest text-roz/70">
               Trandafiri din Județul Bacău · 100ml
             </span>
           </div>
@@ -139,7 +139,7 @@ const Header = () => {
               initial={{ y: "-30%", opacity: 0 }}
               animate={{ y: "0", opacity: 1 }}
               exit={{ y: "-10%", opacity: 0 }}
-              className="absolute left-0 right-0 top-full flex flex-col items-center gap-2 bg-site/95 px-6 pb-4 pt-6 text-white shadow-lg"
+              className="absolute left-0 right-0 top-full flex flex-col items-center gap-2 bg-site/95 px-6 pb-4 pt-6 text-roz shadow-lg"
             >
               <motion.hr
                 initial={{ x: "-100%" }}
@@ -149,7 +149,7 @@ const Header = () => {
                 className="h-1 w-full rounded-full bg-roz"
               />
               <Navigation />
-              <p className="text-[11px] uppercase tracking-widest text-white/60">
+              <p className="text-[11px] uppercase tracking-widest text-roz/70">
                 Prețurile sunt calculate pentru 100ml de esență
               </p>
             </motion.div>
