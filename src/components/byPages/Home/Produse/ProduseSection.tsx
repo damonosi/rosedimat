@@ -74,8 +74,8 @@ const ProduseSection = () => {
           titlu="Apă de trandafiri de Damasc"
           descriere="Transformă-ți rutina de îngrijire într-un moment de rafinament olfactiv și vizual, cu note delicate, floral-condimentate."
           continutProdus="Ingrediente: apă distilată din petale proaspete de trandafiri de Damasc, fără alcool, fără coloranți"
-          pret="85 RON"
-          cantitate="200 ml"
+          pret="85 RON / 100ml"
+          cantitate="100 ml"
         />
       </div>
     </section>

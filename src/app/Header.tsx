@@ -66,16 +66,16 @@ const LogoMenu = ({
 const Navigation = ({ scrollDirection }: { scrollDirection?: string }) => (
   <nav
     className={`z-30 flex w-full items-center justify-center gap-6 text-sm font-medium tracking-[0.2em] uppercase transition-colors duration-500 md:w-1/2 ${
-      scrollDirection === "down" ? "text-roz/80" : "text-roz"
+      scrollDirection === "down" ? "text-[#3f1f24]/80" : "text-[#3f1f24]"
     }`}
   >
-    <Link href="/" className="relative py-2 hover:text-roz/70">
+    <Link href="/" className="relative py-2 transition-colors hover:text-roz">
       Produse
     </Link>
-    <Link href="/" className="relative py-2 hover:text-roz/70">
+    <Link href="/" className="relative py-2 transition-colors hover:text-roz">
       Despre noi
     </Link>
-    <Link href="/" className="relative py-2 hover:text-roz/70">
+    <Link href="/" className="relative py-2 transition-colors hover:text-roz">
       Contact
     </Link>
   </nav>
@@ -104,7 +104,7 @@ const Header = () => {
       >
         <div className="flex items-center gap-6">
           <LogoLink scrollDirection={scrollDirection} />
-          <div className="flex flex-col text-xs font-medium tracking-widest text-roz/80">
+          <div className="flex flex-col text-xs font-medium tracking-widest text-[#3f1f24]">
             <span className="uppercase">Rose Dimat</span>
             <span className="text-[11px] uppercase">Esențe artizanale din România</span>
           </div>
@@ -121,12 +121,12 @@ const Header = () => {
       </section>
       <section
         id="mobile"
-        className="relative flex h-[72px] w-full flex-col items-center justify-center gap-1 bg-site/95 px-4 py-2 text-roz shadow-lg md:hidden"
+        className="relative flex h-[72px] w-full flex-col items-center justify-center gap-1 bg-site/95 px-4 py-2 text-[#3f1f24] shadow-lg md:hidden"
       >
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-col text-xs font-semibold uppercase tracking-[0.2em]">
             <span>Rose Dimat</span>
-            <span className="text-[10px] font-normal tracking-widest text-roz/70">
+            <span className="text-[10px] font-normal tracking-widest text-[#3f1f24]/80">
               Trandafiri din Județul Bacău · 100ml
             </span>
           </div>
