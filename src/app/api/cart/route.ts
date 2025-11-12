@@ -1,8 +1,8 @@
 import Cart from "@/models/Cart";
 import db from "@/utils/db";
+import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
-import { authOptions } from "../auth/[...nextauth]/route";
 
 const normalizeCart = (cart: any) => {
   if (!cart) {

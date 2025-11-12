@@ -3,7 +3,7 @@ import Cart from "@/models/Cart";
 import db from "@/utils/db";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 
 const CartPage = async () => {
   const session = await getServerSession(authOptions);

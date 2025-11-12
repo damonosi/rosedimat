@@ -1,9 +1,9 @@
 import User from "@/models/User";
 import db from "@/utils/db";
+import { authOptions } from "@/lib/auth";
 import { hash } from "bcryptjs";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
-import { authOptions } from "../../auth/[...nextauth]/route";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
