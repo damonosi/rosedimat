@@ -37,7 +37,7 @@ const HeroSection = () => {
             viewport={{ once: true }}
             className="text-4xl font-semibold text-[#3f1f24] sm:text-5xl lg:text-6xl"
           >
-            ROSE DIMAT – Ritualul complet cu apă de trandafiri de Damasc
+            CASA DAMASKIN – Ritualul complet cu apă de trandafiri de Damasc
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 40 }}
@@ -47,7 +47,7 @@ const HeroSection = () => {
             className="text-lg leading-relaxed text-[#4d2a2e] sm:text-xl"
           >
             Tonifică, parfumează și iluminează pielea cu singurul produs pe care îl
-            creăm: apa de trandafiri Rose Dimat, distilată lent din petale culese la
+            creăm: apa de trandafiri Casa Damaskin, distilată lent din petale culese la
             răsărit în livezile noastre din România. Formula pură, fără alcool,
             păstrează intact parfumul damascen autentic pentru a reda strălucire
             tenului și starea de bine ritualului tău zilnic.

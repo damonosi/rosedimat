@@ -58,7 +58,7 @@ const ProduseSection = () => {
       <div className="relative z-10 flex w-full max-w-6xl flex-col items-center gap-16 text-center">
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-3xl font-semibold text-[#3f1f24] sm:text-4xl">
-            Apa de trandafiri Rose Dimat
+            Apa de trandafiri Casa Damaskin
           </h1>
           <p className="max-w-3xl text-base text-[#4d2a2e]/80 sm:text-lg">
             Distilăm un singur produs pentru că punem toate resursele în perfecționarea
@@ -74,8 +74,9 @@ const ProduseSection = () => {
           titlu="Apă de trandafiri de Damasc"
           descriere="Transformă-ți rutina de îngrijire într-un moment de rafinament olfactiv și vizual, cu note delicate, floral-condimentate."
           continutProdus="Ingrediente: apă distilată din petale proaspete de trandafiri de Damasc, fără alcool, fără coloranți"
-          pret="85 RON / 100ml"
-          cantitate="100 ml"
+          price={85}
+          unit="100 ml"
+          slug="apa-de-trandafiri"
         />
       </div>
     </section>

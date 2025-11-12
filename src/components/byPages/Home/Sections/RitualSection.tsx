@@ -2,7 +2,7 @@ const steps = [
   {
     title: "Purificare și pregătire",
     description:
-      "Curăță tenul cu un gel blând, apoi pulverizează apă de trandafiri Rose Dimat pe față și gât pentru a reechilibra pH-ul și a reduce senzația de piele care ține.",
+      "Curăță tenul cu un gel blând, apoi pulverizează apă de trandafiri Casa Damaskin pe față și gât pentru a reechilibra pH-ul și a reduce senzația de piele care ține.",
   },
   {
     title: "Aplicarea tratamentelor",
@@ -27,7 +27,7 @@ const RitualSection = () => {
             Cum integrezi apa de trandafiri în rutina zilnică
           </h2>
           <p className="text-base text-[#4d2a2e]/80 sm:text-lg">
-            Urmează pașii recomandați de experții noștri pentru a profita la maximum de proprietățile calmante, hidratante și aromaterapeutice ale apei de trandafiri Rose Dimat.
+            Urmează pașii recomandați de experții noștri pentru a profita la maximum de proprietățile calmante, hidratante și aromaterapeutice ale apei de trandafiri Casa Damaskin.
           </p>
         </div>
         <div className="grid gap-8 text-left sm:grid-cols-3">

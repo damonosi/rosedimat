@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "Este potrivită pentru ten sensibil sau acneic?",
     answer:
-      "Da. Apa de trandafiri Rose Dimat este testată dermatologic și recomandată pentru piele sensibilă, inclusiv pentru ten predispus la acnee. Proprietățile antiinflamatoare ajută la calmarea iritațiilor și la reducerea sebumului în exces.",
+      "Da. Apa de trandafiri Casa Damaskin este testată dermatologic și recomandată pentru piele sensibilă, inclusiv pentru ten predispus la acnee. Proprietățile antiinflamatoare ajută la calmarea iritațiilor și la reducerea sebumului în exces.",
   },
   {
     question: "Cum se păstrează corect apa de trandafiri?",
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "Livrați și internațional?",
     answer:
-      "Momentan expediem doar în România, prin curier rapid. Pentru comenzi corporate sau distribuție internațională, te rugăm să ne scrii la office@rosedimat.com pentru o ofertă personalizată.",
+      "Momentan expediem doar în România, prin curier rapid. Pentru comenzi corporate sau distribuție internațională, te rugăm să ne scrii la contact@casadamaskin.com pentru o ofertă personalizată.",
   },
 ];
 
