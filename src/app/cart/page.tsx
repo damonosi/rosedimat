@@ -30,7 +30,7 @@ const CartPage = async () => {
     ? {
         _id: cartData._id.toString(),
         items: cartData.items.map((item) => ({
-          _id: item._id.toString(),
+          _id: item._id!.toString(),
           slug: item.slug,
           name: item.name,
           image: item.image,
