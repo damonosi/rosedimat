@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 export interface ICartItem {
+  _id?: Schema.Types.ObjectId;
   product?: Schema.Types.ObjectId;
   slug: string;
   name: string;
@@ -10,6 +11,7 @@ export interface ICartItem {
 }
 
 export interface ICart {
+  _id?: Schema.Types.ObjectId;
   user: Schema.Types.ObjectId;
   items: ICartItem[];
 }
