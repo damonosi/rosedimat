@@ -90,7 +90,9 @@ export async function POST(request: Request) {
       });
     }
 
-    const existingItem = cart.items.find((item) => item.slug === slug);
+    const existingItem = cart.items.find(
+      (item: { slug: string; quantity: number }) => item.slug === slug,
+    );
 
     if (existingItem) {
       existingItem.quantity += parsedQuantity;
