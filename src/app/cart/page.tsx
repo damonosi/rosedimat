@@ -1,9 +1,15 @@
 import CartView from "@/components/cart/CartView";
-import Cart from "@/models/Cart";
+import Cart, { ICart, ICartItem } from "@/models/Cart";
 import db from "@/utils/db";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/auth";
+import { Types } from "mongoose";
+
+type LeanCart = ICart & {
+  _id: Types.ObjectId;
+  items: (ICartItem & { _id: Types.ObjectId })[];
+};
 
 const CartPage = async () => {
   const session = await getServerSession(authOptions);
@@ -13,9 +19,9 @@ const CartPage = async () => {
   }
 
   await db.connect();
-  let cartData;
+  let cartData: LeanCart | null = null;
   try {
-    cartData = await Cart.findOne({ user: session.user.id }).lean();
+    cartData = await Cart.findOne({ user: session.user.id }).lean<LeanCart>();
   } finally {
     await db.disconnect();
   }
@@ -23,7 +29,7 @@ const CartPage = async () => {
   const serializedCart = cartData
     ? {
         _id: cartData._id.toString(),
-        items: cartData.items.map((item: any) => ({
+        items: cartData.items.map((item) => ({
           _id: item._id.toString(),
           slug: item.slug,
           name: item.name,
