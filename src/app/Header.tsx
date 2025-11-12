@@ -4,15 +4,17 @@ import Cart from "@/public/imagini/cart.svg";
 
 import Logo from "@/public/imagini/logo.svg";
 import { AnimatePresence, motion } from "framer-motion";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 
 const NAV_ITEMS = [
-  { href: "/", label: "Produse" },
-  { href: "/", label: "Despre noi" },
-  { href: "/", label: "Contact" },
+  { href: "/#produse", label: "Produse" },
+  { href: "/#despre-noi", label: "Despre noi" },
+  { href: "/#contact", label: "Contact" },
 ];
+
+const BRAND_NAME = "Casa Damaskin";
 
 const PatratRoz = ({ scrollDirection }: { scrollDirection: string }) => {
   return (
@@ -127,17 +129,48 @@ const Header = () => {
         <div className="flex items-center gap-6">
           <LogoLink scrollDirection={scrollDirection} />
           <div className="flex flex-col text-xs font-medium tracking-widest text-[#3f1f24]">
-            <span className="uppercase">Rose Dimat</span>
+            <span className="uppercase">{BRAND_NAME}</span>
             <span className="text-[11px] uppercase">Esențe artizanale din România</span>
           </div>
         </div>
 
         <Navigation scrollDirection={scrollDirection} />
 
-        <div className="relative flex h-full items-center justify-center" id="cart">
-          <button className="z-30 flex h-11 w-11 items-center justify-center rounded-full border border-roz/40 bg-roz/10 text-roz backdrop-blur transition hover:scale-105 hover:bg-roz/20">
+        <div className="relative flex h-full items-center justify-center gap-4" id="cart">
+          <Link
+            href="/cart"
+            className="z-30 flex h-11 w-11 items-center justify-center rounded-full border border-roz/40 bg-roz/10 text-roz backdrop-blur transition hover:scale-105 hover:bg-roz/20"
+          >
+            <span className="sr-only">Vezi coșul de cumpărături</span>
             <Cart alt="cart" className="h-5 w-5" />
-          </button>
+          </Link>
+          <div className="hidden items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#3f1f24]/80 lg:flex">
+            {status === "loading" ? (
+              <span>Se încarcă…</span>
+            ) : session ? (
+              <>
+                <Link
+                  href="/profile"
+                  className="rounded-full border border-roz/30 bg-roz/10 px-4 py-2 text-[#3f1f24] transition hover:bg-roz/20"
+                >
+                  Profil
+                </Link>
+                <button
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                  className="rounded-full border border-roz/30 bg-white/60 px-4 py-2 text-[#3f1f24] transition hover:bg-white"
+                >
+                  Delogare
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/login"
+                className="rounded-full border border-roz/30 bg-white/60 px-4 py-2 text-[#3f1f24] transition hover:bg-white"
+              >
+                Autentificare
+              </Link>
+            )}
+          </div>
           <PatratRoz scrollDirection={scrollDirection} />
         </div>
       </section>
@@ -147,7 +180,7 @@ const Header = () => {
       >
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-col text-xs font-semibold uppercase tracking-[0.2em]">
-            <span>Rose Dimat</span>
+            <span>{BRAND_NAME}</span>
             <span className="text-[10px] font-normal tracking-widest text-[#3f1f24]/80">
               Trandafiri din Județul Bacău · 100ml
             </span>
@@ -187,12 +220,42 @@ const Header = () => {
                     Prețurile sunt calculate pentru 100ml de esență
                   </p>
                   <Link
-                    href="/"
+                    href="/cart"
                     className="inline-flex items-center justify-center rounded-full border border-roz/40 bg-roz/10 px-6 py-2 text-[11px] font-semibold tracking-[0.35em] text-roz transition hover:bg-roz/20"
                     onClick={() => setOpenMenu(false)}
                   >
-                    Scrie-ne
+                    Vezi coșul
                   </Link>
+                  {status === "loading" ? (
+                    <span>Se încarcă…</span>
+                  ) : session ? (
+                    <>
+                      <Link
+                        href="/profile"
+                        className="inline-flex items-center justify-center rounded-full border border-roz/40 bg-white/70 px-6 py-2 text-[11px] font-semibold tracking-[0.35em] text-[#3f1f24] transition hover:bg-white"
+                        onClick={() => setOpenMenu(false)}
+                      >
+                        Profilul meu
+                      </Link>
+                      <button
+                        onClick={() => {
+                          setOpenMenu(false);
+                          signOut({ callbackUrl: "/" });
+                        }}
+                        className="inline-flex items-center justify-center rounded-full border border-roz/40 bg-white/70 px-6 py-2 text-[11px] font-semibold tracking-[0.35em] text-[#3f1f24] transition hover:bg-white"
+                      >
+                        Delogare
+                      </button>
+                    </>
+                  ) : (
+                    <Link
+                      href="/login"
+                      className="inline-flex items-center justify-center rounded-full border border-roz/40 bg-white/70 px-6 py-2 text-[11px] font-semibold tracking-[0.35em] text-[#3f1f24] transition hover:bg-white"
+                      onClick={() => setOpenMenu(false)}
+                    >
+                      Autentificare
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             </>

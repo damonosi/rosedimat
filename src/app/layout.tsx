@@ -8,8 +8,8 @@ import "./globals.css";
 const hahmlet = Hahmlet({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Rose Dimat",
-  description: "Magazin trandafiri de damasc",
+  title: "Casa Damaskin",
+  description: "Magazin dedicat esențelor de trandafiri de Damasc",
 };
 
 export default function RootLayout({

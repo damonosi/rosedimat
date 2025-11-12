@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const navigationLinks = [
-  { label: "Produse", href: "/" },
-  { label: "Despre noi", href: "/" },
-  { label: "Contact", href: "/" },
+  { label: "Produse", href: "/#produse" },
+  { label: "Despre noi", href: "/#despre-noi" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="grid gap-10 md:grid-cols-[1.4fr,1fr,1fr]">
           <div className="space-y-5">
             <div>
-              <p className="text-sm font-semibold tracking-[0.3em] uppercase text-roz">Rose Dimat</p>
+              <p className="text-sm font-semibold tracking-[0.3em] uppercase text-roz">Casa Damaskin</p>
               <h2 className="mt-2 text-2xl font-semibold tracking-wide text-[#3f1f24]">
                 Esențe artizanale din România
               </h2>
@@ -33,8 +33,8 @@ const Footer = () => {
               <p>Program: Luni – Vineri, 09:00 – 18:00</p>
               <p>
                 Email:
-                <a href="mailto:atelier@rosedimat.ro" className="ml-1 font-medium text-roz hover:text-roz/80">
-                  atelier@rosedimat.ro
+                <a href="mailto:atelier@casadamaskin.ro" className="ml-1 font-medium text-roz hover:text-roz/80">
+                  atelier@casadamaskin.ro
                 </a>
               </p>
               <p>
@@ -98,7 +98,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between gap-3 border-t border-roz/10 pt-6 text-xs tracking-[0.3em] uppercase text-[#3f1f24]/60 md:flex-row">
-          <p>&copy; {currentYear} Rose Dimat. Toate drepturile rezervate.</p>
+          <p>&copy; {currentYear} Casa Damaskin. Toate drepturile rezervate.</p>
           <p>Creat cu drag în România.</p>
         </div>
       </div>

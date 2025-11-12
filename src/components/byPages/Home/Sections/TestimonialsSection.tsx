@@ -2,7 +2,7 @@ const testimonials = [
   {
     name: "Andreea, specialist spa",
     quote:
-      "Apa de trandafiri Rose Dimat este nelipsită din masajele faciale pe care le ofer. Clienții observă imediat diferența de parfum și de confort al pielii față de alte ape florale.",
+      "Apa de trandafiri Casa Damaskin este nelipsită din masajele faciale pe care le ofer. Clienții observă imediat diferența de parfum și de confort al pielii față de alte ape florale.",
   },
   {
     name: "Irina, make-up artist",
@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
           <div className="flex flex-col gap-4 text-center lg:text-left">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-roz">Părerile clienților</p>
             <h2 className="text-3xl font-semibold text-[#3f1f24] sm:text-4xl">
-              Profesioniștii recomandă Rose Dimat
+              Profesioniștii recomandă Casa Damaskin
             </h2>
             <p className="text-base text-[#4d2a2e]/80 sm:text-lg">
               Împărtășim feedbackul primit din partea specialiștilor care folosesc zilnic apa de trandafiri în tratamente faciale, machiaje și ritualuri corporale.

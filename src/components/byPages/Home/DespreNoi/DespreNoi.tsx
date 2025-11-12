@@ -23,7 +23,7 @@ const DespreNoi = () => {
               className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-lg shadow-roz/20"
             >
               <Image
-                alt="Echipa Rose Dimat"
+                alt="Echipa Casa Damaskin"
                 src={imagine}
                 fill
                 className="object-cover"
@@ -35,7 +35,7 @@ const DespreNoi = () => {
         </div>
         <div className="flex max-w-4xl flex-col gap-6 text-[#4d2a2e]">
           <h2 className="text-xl font-medium sm:text-2xl">
-            Rose Dimat este o afacere de familie născută din dragostea și respectul
+            Casa Damaskin este o afacere de familie născută din dragostea și respectul
             față de natură, dedicată exclusiv distilării apei de trandafiri de Damasc.
           </h2>
           <p className="text-base leading-relaxed sm:text-lg">
@@ -53,7 +53,7 @@ const DespreNoi = () => {
             eficientă.
           </p>
           <p className="text-base leading-relaxed sm:text-lg">
-            Rose Dimat este mai mult decât o marcă: este o invitație la un ritual
+            Casa Damaskin este mai mult decât o marcă: este o invitație la un ritual
             autentic, inspirat de tradițiile balcanice, dar adaptat modernului, cu un
             parfum floral persistent, apreciat de terapeuți spa și make-up artiști din
             întreaga țară.
@@ -61,16 +61,16 @@ const DespreNoi = () => {
         </div>
         <section
           className="flex w-full flex-col items-center gap-10 rounded-[32px] bg-roz/5 p-8 text-[#3f1f24] sm:p-12"
-          id="sectiune-contact"
+          id="contact"
         >
           <h2 className="text-2xl font-light sm:text-3xl">Contactează-ne!</h2>
           <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
-              href="mailto:office@rosedimat.com"
+              href="mailto:contact@casadamaskin.com"
               className="flex w-full items-center justify-center gap-3 rounded-full border border-roz/30 bg-white/70 px-6 py-3 text-base font-medium transition hover:border-roz hover:text-roz sm:w-auto"
             >
               <Email className="h-5 w-5" />
-              <span>office@rosedimat.com</span>
+              <span>contact@casadamaskin.com</span>
             </a>
             <a
               href="tel:+4436436346663"

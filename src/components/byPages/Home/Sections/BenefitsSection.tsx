@@ -30,11 +30,11 @@ const BenefitsSection = () => {
         <div className="flex flex-col gap-4">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-roz">Beneficii cheie</p>
           <h2 className="text-3xl font-semibold text-[#3f1f24] sm:text-4xl">
-            De ce să alegi apa de trandafiri Rose Dimat?
+            De ce să alegi apa de trandafiri Casa Damaskin?
           </h2>
           <p className="max-w-3xl text-base text-[#4d2a2e]/80 sm:text-lg">
             Apa noastră florală, produsă artizanal, este apreciată de cosmeticiene și terapeuți spa pentru efectele calmante, rafinate și aromatice.
-            Descoperă principalele motive pentru care clienții aleg Rose Dimat pentru ritualul lor zilnic de îngrijire.
+            Descoperă principalele motive pentru care clienții aleg Casa Damaskin pentru ritualul lor zilnic de îngrijire.
           </p>
         </div>
         <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
